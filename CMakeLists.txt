@@ -8,7 +8,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-    set(WHISPER_STANDALONE ON)
+    set(WHISPER_STANDALONE OFF)
     include(GitVars)
     include(BuildTypes)
 
@@ -45,9 +45,9 @@ option(WHISPER_SANITIZE_ADDRESS       "whisper: enable address sanitizer"   OFF)
 option(WHISPER_SANITIZE_UNDEFINED     "whisper: enable undefined sanitizer" OFF)
 
 option(WHISPER_BUILD_TESTS            "whisper: build tests"    ${WHISPER_STANDALONE})
-option(WHISPER_BUILD_EXAMPLES         "whisper: build examples" ${WHISPER_STANDALONE})
+option(WHISPER_BUILD_EXAMPLES         "whisper: build examples" ON)
 
-option(WHISPER_SDL2                   "whisper: support for libSDL2" OFF)
+option(WHISPER_SDL2                   "whisper: support for libSDL2" ON)
 
 option(WHISPER_NO_AVX                 "whisper: disable AVX"  OFF)
 option(WHISPER_NO_AVX2                "whisper: disable AVX2" OFF)
